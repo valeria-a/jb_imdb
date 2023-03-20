@@ -20,7 +20,7 @@ class Movie(models.Model):
 
 class Director(models.Model):
 
-    name = models.CharField(null=False, blank=False, max_length=128)
+    name = models.CharField(null=False, max_length=128)
     birth_date = models.DateField(null=True, blank=True)
 
     class Meta:

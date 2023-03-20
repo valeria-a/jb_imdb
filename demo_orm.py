@@ -1,3 +1,4 @@
+import datetime
 import os
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "imdb.settings"
@@ -36,5 +37,18 @@ if __name__ == '__main__':
     # m = Movie.objects.get(name='Pulp fiction')
     # print(m.director)
 
-    d = Director.objects.all()[0]
-    print(d.movie_set.all())
+    # d = Director.objects.all()[0]
+    # print(d.movie_set.all())
+
+    # new_d = Director.objects.create(name='Stieven Spielberg',
+    #                                 birth_date=datetime.date(1956, 2, 3))
+    # new_m = Movie(name='Jurasic park', director=new_d)
+    # new_m.save()
+
+    # new_m.director = new_d
+    # new_m.save()
+
+    d = Director.objects.get(pk=4)
+    # d.movie_set.create(name='E.T', year=1982)
+
+    d.movie_set.remove(Movie.objects.get(id=7))
